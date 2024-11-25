@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package product;
+
+option java_package = "com.sadlier.product";
+option java_outer_classname = "ProductProto";
+
+message ProductRequest {
+  string product_id = 1;
+}
+
+message ProductResponse {
+  string user_id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+service ProductService {
+  rpc GetUserInfo(ProductRequest) returns (ProductResponse);
+}
